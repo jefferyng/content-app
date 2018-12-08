@@ -1,10 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "app01";
-$conn = new mysqli($servername, $username, $password, $dbname);
-echo '<script>console.log("successful connection")</script>';
+include 'dbConfig.php';
  ?>
 
 <!-- Signup Form -->

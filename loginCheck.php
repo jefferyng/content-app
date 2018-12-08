@@ -1,21 +1,6 @@
 <?php
 
-// Connects to SQL server app01
-// TODO: The set up for DB connection string shouldn't appear in every file
-// The connection open/check/error code should be put in to a single file (dbConfig.php)
-// and php included with every file that needs it.
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "app01";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo '<script>console.log("successful connection")</script>';
-$success = 0;
+include 'dbConfig.php';
 
 $sql = "SELECT * FROM users WHERE username = '" . $_POST["username"] . "'" . " AND password = '" . $_POST["password"] . "'";
 $result = $conn->query($sql);

@@ -1,24 +1,6 @@
 <?php 
 
-
-//Change
-//Second Change
-
-
-session_start();
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "app01";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-    if (isset($_GET["new"])) {
-        $new = $_GET["new"];
-    }
-
-	$username="user";
-	$password="password";
+include 'dbConfig.php';
 
 	//Logs In
 

@@ -2,19 +2,7 @@
 
 //Connect to SQL
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "app01";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-echo '<script>console.log("successful connection")</script>';
-
+include 'dbConfig.php';
 
 $username = $_POST["username"];
 $password = $_POST["password"];
