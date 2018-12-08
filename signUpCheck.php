@@ -36,7 +36,7 @@ if (stripos($checkinfo, ';')){
 	header("Location: signUp.php?shortpassword=1");
   } else {
 
-  //Username Taken
+  //If username taken
 
     if ($result->num_rows > 0) {
     header("Location: signUp.php?taken=1");
@@ -56,7 +56,7 @@ if (stripos($checkinfo, ';')){
 
         } else {
 
-           //Catche SQL connection error
+           //Catch SQL connection error
 
            echo "Error: " . $sql . "<br>" . $conn->error;
         }
