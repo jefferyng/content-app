@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -16,6 +16,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo '<script>console.log("successful connection")</script>';
+
+// TODO: Is this variable being used anywhere?
 $success = 0;
 
  ?>
