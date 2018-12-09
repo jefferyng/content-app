@@ -15,21 +15,20 @@ include 'dbConfig.php';
 ?>
 <html>
 <head>
-   <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
 <!-- Form -->
-<!-- // TODO: Don't use br and inline styles, start an css file. -->
-<form method="post" action="loginCheck.php" style="margin-left: 10px;"><br>
-Username:<br><br>
-<input type="text" name="username"><br><br>
-Password:<br><br>
-<input type="password" name="password"><br><br>
-<input type="submit" value="Login">
+<form method="post" action="loginCheck.php" class="loginmargin">
+Username:
+<input type="text" name="username" class="loginmargin">
+Password:
+<input type="password" name="password" class="loginmargin">
+<input type="submit" value="Login" class="loginmargin">
 </form>
 
-<div style="color:red;">
+<div id="red">
 <?php
 
 //Displays Errors
