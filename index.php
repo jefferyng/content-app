@@ -3,20 +3,20 @@
 include 'dbConfig.php';
 
 	//Logs In
-  // TODO: What does all this do?
-	// TODO: This can all be reduced to one if statement probably
-	if(isset($_SESSION["logged_in"])&&$_SESSION["logged_in"]==true){
-	} if(isset($_POST["username"])&&isset($_POST["password"])){
-		if($_POST["username"]==$username&&$_POST["password"]==$password){
-			$_SESSION["logged_in"]=true;header("Location success.php");
-		}}
 
-  // TODO: Why is this here?
+	// TODO: This can all be reduced to one if statement probably
+	if(isset($_SESSION["logged_in"])&&$_SESSION["logged_in"]==true&&(isset($_POST["username"])&&isset($_POST["password"])&&$_POST["username"]==$username&&$_POST["password"]==$password)){
+		$_SESSION["logged_in"]=true;header("Location success.php");
+	}
+  //Checks if account deleted and redirected from Admin success.php
     if(isset($_POST["delete"])){
   mysqli_query($conn, "DELETE * FROM users WHERE username = " . $_POST["delete"]);
 }
 ?>
 <html>
+<head>
+   <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+</head>
 <body>
 
 <!-- Form -->
