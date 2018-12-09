@@ -17,7 +17,4 @@ if ($conn->connect_error) {
 }
 echo '<script>console.log("successful connection")</script>';
 
-// TODO: Is this variable being used anywhere?
-$success = 0;
-
  ?>

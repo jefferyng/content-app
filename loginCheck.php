@@ -1,6 +1,7 @@
 <?php
 
 include 'dbConfig.php';
+$success = 0;
 
 $sql = "SELECT * FROM users WHERE username = '" . $_POST["username"] . "'" . " AND password = '" . $_POST["password"] . "'";
 $result = $conn->query($sql);
