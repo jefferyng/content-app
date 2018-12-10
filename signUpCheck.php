@@ -72,6 +72,8 @@ if (stripos($checkinfo, ';')){
 }
 $conn->close();
 
+//Dump variables (for testing)
+
 var_dump($specialchar1);
 var_dump($specialchar1);
 var_dump($specialchar1);

@@ -5,6 +5,7 @@
 include 'dbConfig.php';
 
 //Setup Data
+
 if (isset($_GET["passwordhash"])) {
 	$passwordhash = $_GET["passwordhash"];
 }
@@ -51,6 +52,7 @@ if(isset($deleteuser)){
  <form>
  	<button action="header('Location: index.php');">Logout</button>
  </form>
+
 <!-- User Delete-->
 
 <form action="index.php"  method = "post">
@@ -77,7 +79,9 @@ if(isset($deleteuser)){
    $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
+
+    //Output data of each row
+
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>" . $row["id"] . "</td><td>". $row["username"]. "</td><td>". $row["password"]. "</td><td>" . $row["rank"] . "</td><td>" . $row["email"] ."</td></tr>";
     }

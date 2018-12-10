@@ -7,10 +7,11 @@ include 'dbConfig.php';
 	if(isset($_SESSION["logged_in"])&&$_SESSION["logged_in"]==true&&(isset($_POST["username"])&&isset($_POST["password"])&&$_POST["username"]==$username&&$_POST["password"]==$password)){
 		$_SESSION["logged_in"]=true;header("Location success.php");
 	}
-  //Checks if account deleted and redirected from Admin success.php
-    if(isset($_POST["delete"])){
-  mysqli_query($conn, "DELETE * FROM users WHERE username = " . $_POST["delete"]);
 
+  //Checks if account deleted and redirected from Admin success.php
+
+ if(isset($_POST["delete"])){
+    mysqli_query($conn, "DELETE * FROM users WHERE username = " . $_POST["delete"]);
 }
 
 //Displays Errors
@@ -31,6 +32,7 @@ if (isset($_GET["login"]) && $_GET["login"] == 0) {
 <body>
 
 <!-- Form -->
+
 <form method="post" action="loginCheck.php" class="loginmargin">
 Username:
 <input type="text" name="username" class="loginmargin">
