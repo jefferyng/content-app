@@ -1,5 +1,6 @@
 <?php
 
+// TODO: Should this be here or in individual files that actually need to use session.
 session_start();
 
 $servername = "localhost";
@@ -8,9 +9,11 @@ $password = "";
 $dbname = "app01";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-    if (isset($_GET["new"])) {
-        $new = $_GET["new"];
-    }
+
+// TODO: Where is this used?
+if (isset($_GET["new"])) {
+    $new = $_GET["new"];
+}
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

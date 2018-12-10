@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 //Connect to SQL
 
 include 'dbConfig.php';
 
 //Setup Data
-
+// TODO: Move this logic loginCheck.
 if (isset($_GET["passwordhash"])) {
 	$passwordhash = $_GET["passwordhash"];
 }
@@ -28,7 +28,9 @@ if(isset($_POST["delete"])){
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
+
+// TODO: Use username and rank stored in Session instead
 if (isset($_GET["logintrue"]) && $_GET["logintrue"] == md5("true") && $_GET["passwordhash"] == $passwordhash) {
 	echo "<h1>Welcome, $user.</h1> ";
 
@@ -73,7 +75,7 @@ if(isset($deleteuser)){
   	<th>Rank</th>
   	<th>Email</th>
   </tr>
-  <?php 
+  <?php
 
    $sql = "SELECT username, password, rank, email, id FROM users";
    $result = $conn->query($sql);
